@@ -1,0 +1,97 @@
+ mkdir Riyan_VTU_Git
+
+Knsit@DESKTOP-5EVJ5VC MINGW64 ~ (master)
+$ cd Riyan_VTU_Git
+
+Knsit@DESKTOP-5EVJ5VC MINGW64 ~/Riyan_VTU_Git (master)
+$ git init
+Initialized empty Git repository in C:/Users/Knsit/Riyan_VTU_Git/.git/
+
+Knsit@DESKTOP-5EVJ5VC MINGW64 ~/Riyan_VTU_Git (master)
+$ git config user.name "Riyan"
+
+Knsit@DESKTOP-5EVJ5VC MINGW64 ~/Riyan_VTU_Git (master)
+$ git config user.email "riyankhan43477@gmail.com"
+
+Knsit@DESKTOP-5EVJ5VC MINGW64 ~/Riyan_VTU_Git (master)
+$ echo "name : Riyan" > student.txt
+
+Knsit@DESKTOP-5EVJ5VC MINGW64 ~/Riyan_VTU_Git (master)
+$ echo "USN : 1KN25CS110" >>student.txt
+
+Knsit@DESKTOP-5EVJ5VC MINGW64 ~/Riyan_VTU_Git (master)
+$ echo "college : KNSIT" >>student.txt
+
+Knsit@DESKTOP-5EVJ5VC MINGW64 ~/Riyan_VTU_Git (master)
+$ git add student.txt
+warning: in the working copy of 'student.txt', LF will be replaced by CRLF the next time Git touches it
+
+Knsit@DESKTOP-5EVJ5VC MINGW64 ~/Riyan_VTU_Git (master)
+$ git commit -m "Initial student file commit"
+[master (root-commit) a7b7b81] Initial student file commit
+ 1 file changed, 3 insertions(+)
+ create mode 100644 student.txt
+
+Knsit@DESKTOP-5EVJ5VC MINGW64 ~/Riyan_VTU_Git (master)
+$ git switch -c feature
+Switched to a new branch 'feature'
+
+Knsit@DESKTOP-5EVJ5VC MINGW64 ~/Riyan_VTU_Git (feature)
+$ echo "Department : computer science" >>student.txt
+
+Knsit@DESKTOP-5EVJ5VC MINGW64 ~/Riyan_VTU_Git (feature)
+$ git status
+On branch feature
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   student.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+
+
+Knsit@DESKTOP-5EVJ5VC MINGW64 ~/Riyan_VTU_Git (feature)
+$ git add student.txt
+warning: in the working copy of 'student.txt', LF will be replaced by CRLF the next time Git touches it
+
+Knsit@DESKTOP-5EVJ5VC MINGW64 ~/Riyan_VTU_Git (feature)
+$ git commit -m "Temporary student file changes"
+[feature 410f180] Temporary student file changes
+ 1 file changed, 1 insertion(+)
+
+Knsit@DESKTOP-5EVJ5VC MINGW64 ~/Riyan_VTU_Git (feature)
+$ git status
+On branch feature
+nothing to commit, working tree clean
+
+Knsit@DESKTOP-5EVJ5VC MINGW64 ~/Riyan_VTU_Git (feature)
+$ git stash save "Temporary changes"
+No local changes to save
+
+Knsit@DESKTOP-5EVJ5VC MINGW64 ~/Riyan_VTU_Git (feature)
+$ git switch main
+Switched to branch 'master'
+
+Knsit@DESKTOP-5EVJ5VC MINGW64 ~/Riyan_VTU_Git (master)
+$ git switch feature
+Switched to branch 'feature'
+
+Knsit@DESKTOP-5EVJ5VC MINGW64 ~/Riyan_VTU_Git (feature)
+$ git stash apply
+stash entries found.
+
+Knsit@DESKTOP-5EVJ5VC MINGW64 ~/Riyan_VTU_Git (feature)
+$ git status
+On branch feature
+nothing to commit, working tree clean
+
+Knsit@DESKTOP-5EVJ5VC MINGW64 ~/Riyan_VTU_Git (feature)
+$ git diff
+
+Knsit@DESKTOP-5EVJ5VC MINGW64 ~/Riyan_VTU_Git (feature)
+$ cat student.txt
+name : Riyan
+USN : 1KN25CS110
+college : KNSIT
+Department : computer science
